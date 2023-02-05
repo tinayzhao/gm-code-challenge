@@ -7,7 +7,7 @@ from player import Player
 # Main class to run Tic-Tac-Toe game.
 class Game:
 
-	def play_game(self):
+	def play_new_game(self):
 		board = Board()
 		player1 = Player("X", 1)
 		player2 = Player("O", -1)
@@ -30,6 +30,7 @@ class Game:
 		time.sleep(2)
 		return CommandInterface.ask_play_again()
 
+	# Check if program can declare end of game.
 	def can_end_game(self, board, current_player):
 		if board.find_winner(current_player):
 			win_msg = "Congratulations, Player " + current_player.rep + ", you have won!"
@@ -47,8 +48,9 @@ class Game:
 
 def main():
 	game = Game()
-	while True:
+	while True:	
 		if not game.play_game():
+			# End program if player does not want to start new game.
 			break
 	print("Closing program.")
 	time.sleep(1)

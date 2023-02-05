@@ -2,7 +2,7 @@
 class Board:
 
 	def __init__(self):
-		# Set up win trackers.
+		# Set up attributes to track win.
 		self.rows = [0] * 3
 		self.cols = [0] * 3
 		self.diag = 0
@@ -17,17 +17,18 @@ class Board:
 		self.board = [[" " for _ in range(3)] for _ in range(3)]
 
 		# Maps square to board position.
-		self.square_map = { 
-		      				1: (0,0),
-		      				2: (0,1),
-		     			 	3: (0,2),
-		      				4: (1,0),
-		      				5: (1,1),
-		      				6: (1,2),
-		      				7: (2,0),
-		      				8: (2,1),
-		      				9: (2,2)
-		    			   }
+		self.square_map = \
+		    { 
+		      1: (0,0),
+		      2: (0,1),
+		      3: (0,2),
+		      4: (1,0),
+		      5: (1,1),
+		      6: (1,2),
+		      7: (2,0),
+		      8: (2,1),
+		      9: (2,2)
+		    }
 
 	# Makes move for player. If move is successful, return true. If not, return false.
 	def make_move(self, square, player):
@@ -54,16 +55,10 @@ class Board:
 		    return True
 		return False
 
+	# If no one has won by 9 moves, there are no more squares left
+	# to fill and game is a tie.
 	def check_for_tie(self):
 		return self.num_moves >= 9
-
-	def clear(self):
-		self.rows = [0] * 3
-		self.cols = [0] * 3
-		self.diag = 0
-		self.anti_diag = 0
-		self.num_moves = 0
-		self.board = [[" " for _ in range(3)] for _ in range(3)]
 
 	# Return string representation of board.
 	# Example:

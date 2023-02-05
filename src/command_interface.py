@@ -1,6 +1,6 @@
 import time
 
-# Utility class for command line prompting.
+# Utility class for command line prompts.
 class CommandInterface:
 
 	@staticmethod
@@ -21,7 +21,6 @@ class CommandInterface:
 			  "3. The first player to get 3 of their marks in a row (up, down, across, or diagonally) is the winner.\n"
 			  "4. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.\n"
 			 )
-
 		print("Input positions:")
 		# Prints out:
 		# 1 | 2 | 3
@@ -57,6 +56,7 @@ class CommandInterface:
 				if len(args) < 2 or not args[1].isdigit():
 					print("Invalid input. Try again.")
 					continue
+				# If player adds extra words after square, ignore them.
 				square = int(args[1])
 				result,err_msg = board.make_move(square, player)
 				if result:
