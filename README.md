@@ -12,7 +12,7 @@ To convert game.py into executable, run `pyinstaller -F src/game.py`
 and game executable should be under `dist` directory.
 
 ## Instructions to Play Game
-Run `./game` in command line to start.
+Run `./game` in command line to start game.
 
 ## Game Rules
 This is a two-player game.
@@ -24,7 +24,11 @@ The rules are:
 
 Input positions:
  1 | 2 | 3
+
 ---+---+---
+
  4 | 5 | 6  
+
 ---+---+---
+
  7 | 8 | 9
