@@ -23,12 +23,9 @@ The rules are:
 4. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
 
 Input positions:
+
  1 | 2 | 3
-
 ---+---+---
-
  4 | 5 | 6  
-
 ---+---+---
-
  7 | 8 | 9
