@@ -9,6 +9,8 @@ This is a Tic-Tac-Toe game for the Giant Machines coding challenge.
 
 `pip3 install -r requirements.txt` - install requirements.txt
 
+`deactivate` - deactivates venv
+
 To test changes by running the game, run `python3 src/game.py`. 
 
 To convert game.py into executable, run `pyinstaller -F src/game.py`
