@@ -41,6 +41,7 @@ class CommandInterface:
 	def play_turn(board, player):
 		print("Player {}'s turn. Current board state:".format(player.rep))
 		print(board)
+		# Run loop until valid input is received and acted upon.
 		while True:
 			print("Input options:\n"
 				  " - \"help\" to print rules\n"

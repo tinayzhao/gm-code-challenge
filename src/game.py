@@ -4,7 +4,7 @@ from board import Board
 from command_interface import CommandInterface
 from player import Player
 
-# Main class to run tic-tac-toe game.
+# Main class to run Tic-Tac-Toe game.
 class Game:
 
 	def play_game(self):
