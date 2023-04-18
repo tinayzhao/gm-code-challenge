@@ -1,3 +1,5 @@
+import config
+import requests
 import time
 
 # Utility class for command line prompts.
@@ -38,7 +40,7 @@ class CommandInterface:
 
 	@staticmethod
 	def play_turn(board, player):
-		print("Player {}'s turn. Current board state:".format(player.rep))
+		print("Player {}'s turn. Current board state:".format(player.get_rep()))
 		print(board)
 		# Run loop until valid input is received and acted upon.
 		while True:
@@ -63,10 +65,10 @@ class CommandInterface:
 					break
 				print(err_msg)
 			elif answer == "stop":
-				board.force_end = True
+				board.prepare_force_end()
 				break
 			elif answer == "skip":
-				print("Skipped Player {}'s turn.".format(player.rep))
+				print("Skipped Player {}'s turn.".format(player.get_rep()))
 				break
 			else:
 				print("Invalid input. Try again.")
@@ -75,6 +77,13 @@ class CommandInterface:
 	def log_end_game(end_msg, board):
 		print(end_msg)
 		print(board)
+		limit = 1
+		api_url = 'https://api.api-ninjas.com/v1/jokes?limit={}'.format(limit)
+		# config.py holds the API key. The file is not tracked by git so the API key is
+		# not exposed to public.
+		response = requests.get(api_url, headers={'X-Api-Key': config.api_key})
+		if response.status_code == requests.codes.ok:
+			print("For fun, have a joke!\n" + response.json()[0]["joke"] + "\n")
 
 	@staticmethod
 	def ask_play_again():

@@ -33,14 +33,14 @@ class Game:
 	# Check if program can declare end of game.
 	def can_end_game(self, board, current_player):
 		if board.find_winner(current_player):
-			win_msg = "Congratulations, Player " + current_player.rep + ", you have won!"
+			win_msg = "Congratulations, Player " + current_player.get_rep() + ", you have won!"
 			CommandInterface.log_end_game(win_msg, board)
 			return True
 		elif board.check_for_tie():
 			tie_msg = "Tie game. No one has won or lost."
 			CommandInterface.log_end_game(tie_msg, board)
 			return True
-		elif board.force_end:
+		elif board.check_for_end():
 			force_end_msg = "Forced end of game."
 			CommandInterface.log_end_game(force_end_msg, board)
 			return True
@@ -49,7 +49,7 @@ class Game:
 def main():
 	game = Game()
 	while True:	
-		if not game.play_game():
+		if not game.play_new_game():
 			# End program if player does not want to start new game.
 			break
 	print("Closing program.")

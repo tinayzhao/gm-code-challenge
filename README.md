@@ -1,8 +1,9 @@
 # gm-code-challenge
 
-This is a Tic-Tac-Toe game for the Giant Machines coding challenge. 
+This is a Tic-Tac-Toe game for the Giant Machines coding challenge and project. 
 
 ## Dev Environment
+From `gm-code-challenge directory`, run
 `python3 -m virtualenv venv` - creates virtual environment
 
 `source venv/bin/activate` - activates venv
@@ -14,10 +15,11 @@ This is a Tic-Tac-Toe game for the Giant Machines coding challenge.
 To test changes by running the game, run `python3 src/game.py`. 
 
 To convert game.py into executable, run `pyinstaller -F src/game.py`
-and game executable should be under `dist` directory.
+from `gm-code-challenge` directory and game executable should be
+under `dist` directory.
 
 ## Instructions to Play Game
-Run `./game` in command line to start game.
+From `gm-code-challenge` directory, run `.dist/game` in command line to start game.
 
 ## Game Rules
 This is a two-player game.
@@ -35,3 +37,9 @@ Input positions:
 ---+---+---
  7 | 8 | 9
 ```
+
+Input options:
+- `help` to print rules
+- `mark <position>`` to make a move
+- `stop` to end game
+- `skip` to skip turn

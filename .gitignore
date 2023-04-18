@@ -1,4 +1,5 @@
 build/
-dist/
+game.spec
+src/config.py
 src/game.spec
 .DS_Store
