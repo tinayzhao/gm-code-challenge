@@ -10,6 +10,8 @@ From `gm-code-challenge directory`, run
 
 `pip3 install -r requirements.txt` - install requirements.txt
 
+`pip freeze > requirements.txt` - update requirements.txt
+
 `deactivate` - deactivates venv
 
 To test changes by running the game, run `python3 src/game.py`. 

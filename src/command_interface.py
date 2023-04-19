@@ -1,4 +1,6 @@
-import config
+from dotenv import load_dotenv
+import os
+from pathlib import Path
 import requests
 import time
 
@@ -79,9 +81,9 @@ class CommandInterface:
 		print(board)
 		limit = 1
 		api_url = 'https://api.api-ninjas.com/v1/jokes?limit={}'.format(limit)
-		# config.py holds the API key. The file is not tracked by git so the API key is
-		# not exposed to public.
-		response = requests.get(api_url, headers={'X-Api-Key': config.api_key})
+		# API key is an environment variable, so it is not exposed to public.
+		load_dotenv(dotenv_path=Path('../.env'))
+		response = requests.get(api_url, headers={'X-Api-Key': os.getenv("JOKE_API_KEY")})
 		if response.status_code == requests.codes.ok:
 			print("For fun, have a joke!\n" + response.json()[0]["joke"] + "\n")
 

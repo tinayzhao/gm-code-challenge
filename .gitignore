@@ -1,5 +1,5 @@
+.DS_Store
+.env
 build/
 game.spec
-src/config.py
 src/game.spec
-.DS_Store
